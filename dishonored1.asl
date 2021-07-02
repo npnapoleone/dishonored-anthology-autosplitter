@@ -98,7 +98,7 @@ exit {
 }
 
 isLoading {
-	return current.isLoading && current.movie != "Dishonored";
+	return (current.isLoading && current.movie != "Dishonored") || vars.autoSplitIndex > vars.autoSplits.Length;
 }
 
 update {
@@ -124,7 +124,7 @@ update {
 }
 
 reset {
-	return current.isLoading && vars.runStarting;
+	return false;
 }
 
 start {
@@ -157,7 +157,9 @@ split {
 		}
 	} else if (vars.autoSplitIndex == vars.autoSplits.Length && settings["autosplit_end"]) {
 		// if the last remaining split is the end, and we have started the cutscene, split if applicable
-		if (!current.isLoading && current.cutsceneActive) {
+		int levelNum = current.levelNumber * 4;
+		string levelName = new DeepPointer(0xFA3624, levelNum, 0x10).DerefString(game, 32);
+		if (!current.isLoading && current.cutsceneActive && levelName.StartsWith("L_LightH_LowChaos_P")) {
 			++vars.autoSplitIndex;
 			return true;
 		}
