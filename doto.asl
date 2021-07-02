@@ -44,17 +44,6 @@ init {
         case  71852032: version = "1.3"; break;
         default:        version = "1.3"; break;
     }
-
-    // print(modules.First().FileVersionInfo.FileVersion);
-    // print(modules.First().ModuleMemorySize.ToString());
-
-    if(vars.autoSplitIndex == -1){
-        for(vars.autoSplitIndex = 0;vars.autoSplitIndex < vars.autoSplits.Length;++vars.autoSplitIndex){
-            if(settings["autosplit_"+vars.autoSplitIndex.ToString()]){
-                break;
-            }
-        }
-    }
 }
 
 exit {
@@ -62,7 +51,7 @@ exit {
 }
 
 isLoading {
-    return current.isLoading;
+    return current.isLoading || vars.autoSplitIndex > vars.autoSplits.Length || vars.autoSplitIndex == -1;
 }
 
 update {
@@ -82,7 +71,7 @@ update {
 }
 
 reset {
-    return current.isLoading && vars.runStarting;
+    return false;
 }
 
 start {
@@ -90,7 +79,7 @@ start {
 }
 
 split {
-    if(vars.autoSplitIndex < vars.autoSplits.Length){
+    if(vars.autoSplitIndex < vars.autoSplits.Length && vars.autoSplitIndex > -1){
         if(current.isLoading && current.levelName.StartsWith(vars.autoSplits[vars.autoSplitIndex].Item2)){
             for(++vars.autoSplitIndex;vars.autoSplitIndex < vars.autoSplits.Length;++vars.autoSplitIndex){
                 if(settings["autosplit_"+vars.autoSplitIndex.ToString()]){
