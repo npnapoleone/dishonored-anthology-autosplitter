@@ -121,7 +121,7 @@ update
 
 reset
 {
-    return false;
+    return current.isLoading && vars.runStarting;
 }
 
 start

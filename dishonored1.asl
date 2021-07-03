@@ -13,14 +13,14 @@ state("Dishonored", "1.2")
 	int missionStatsScreenFlags : 0xFDEB08, 0x24, 0x41C, 0x2E0, 0xC4;
 }
 
-state("Dishonored", "1.4 Reloaded")
+state("Dishonored", "1.4")
 {
-	
-}
-
-state("Dishonored", "1.4 Steam")
-{
-	
+	float x : 0x1052DE8, 0xC4;
+	int levelNumber : 0x103D878, 0x2c0, 0x314, 0, 0x38;
+	string64 movie : 0x104CB18, 0x48, 0;
+	bool cutsceneActive : 0x103B20C, 0x744;
+	bool isLoading : "binkw32.dll", 0x312F4;
+	int missionStatsScreenFlags : 0xFDEB08, 0x24, 0x41C, 0x2E0, 0xC4;
 }
 
 startup {
@@ -82,7 +82,18 @@ startup {
 }
 
 init {
-	version = "1.2";
+	switch (modules.First().ModuleMemorySize) {
+    case  18219008:
+    	version = "1.2";
+    	break;
+    case  19427328:
+    case  18862080:
+    	version = "1.4";
+    	break;
+    default:
+    	version = "";
+    	break;
+  }
 
 	if (vars.autoSplitIndex == -1) {
 		for (vars.autoSplitIndex = 0; vars.autoSplitIndex < vars.autoSplits.Length; ++vars.autoSplitIndex) {
