@@ -94,14 +94,6 @@ init {
     	version = "";
     	break;
   }
-
-	if (vars.autoSplitIndex == -1) {
-		for (vars.autoSplitIndex = 0; vars.autoSplitIndex < vars.autoSplits.Length; ++vars.autoSplitIndex) {
-			if (settings["autosplit_" + vars.autoSplitIndex.ToString()]) {
-				break;
-			}
-		}
-	}
 }
 
 exit {
