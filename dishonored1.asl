@@ -23,52 +23,53 @@ state("Dishonored", "1.4")
 	int missionStatsScreenFlags : 0xFDEB08, 0x24, 0x41C, 0x2E0, 0xC4;
 }
 
-startup {
+startup
+{
 	vars.autoSplits = new Tuple<string, string, bool>[] {
 		Tuple.Create("Prison Start", "L_Prison_P", true),
 		Tuple.Create("Sewers Start", "L_PrsnSewer_P", true),
 		Tuple.Create("Dishonored End Mission Screen", "mission_stats", true),
-		Tuple.Create("Outsider S1", "L_Pub_Day_P", false),
-		Tuple.Create("Outsider S2", "L_OutsiderDream_P", false),
-		Tuple.Create("Outsider S3", "L_Pub_Dusk_P", false),
+		//Tuple.Create("Outsider S1", "L_Pub_Day_P", false),
+		//Tuple.Create("Outsider S2", "L_OutsiderDream_P", false),
+		//Tuple.Create("Outsider S3", "L_Pub_Dusk_P", false),
 		Tuple.Create("Campbell S1", "L_Streets1_P", true),
-		Tuple.Create("Campbell S2", "L_Ovrsr_P", false),
-		Tuple.Create("Campbell S3", "L_Ovrsr_Back_P", false),
+		//Tuple.Create("Campbell S2", "L_Ovrsr_P", false),
+		//Tuple.Create("Campbell S3", "L_Ovrsr_Back_P", false),
 		Tuple.Create("Campbell End Mission Screen", "mission_stats", true),
-		Tuple.Create("Weepers S1", "L_Pub_Morning_P", false),
-		Tuple.Create("Weepers S2", "L_Pub_Day_P", false),
+		//Tuple.Create("Weepers S1", "L_Pub_Morning_P", false),
+		//Tuple.Create("Weepers S2", "L_Pub_Day_P", false),
 		Tuple.Create("Golden Cat S1", "L_Streets2_P", true),
-		Tuple.Create("Golden Cat S2", "L_Brothel_P", false),
-		Tuple.Create("Golden Cat S3", "L_Streets2_P", false),
+		//Tuple.Create("Golden Cat S2", "L_Brothel_P", false),
+		//Tuple.Create("Golden Cat S3", "L_Streets2_P", false),
 		Tuple.Create("Golden Cat End Mission Screen", "mission_stats", true),
-		Tuple.Create("Bridge I1", "L_Pub_Dusk_P", false),
-		Tuple.Create("Bridge S1", "L_Bridge_Part1a_P", false),
-		Tuple.Create("Bridge S2", "L_Bridge_Part1b_P", false),
-		Tuple.Create("Bridge S3", "L_Bridge_Part1c_P", false),
-		Tuple.Create("Bridge S4", "L_Bridge_Part2_P", false),
+		//Tuple.Create("Bridge I1", "L_Pub_Dusk_P", false),
+		//Tuple.Create("Bridge S1", "L_Bridge_Part1a_P", false),
+		//Tuple.Create("Bridge S2", "L_Bridge_Part1b_P", false),
+		//Tuple.Create("Bridge S3", "L_Bridge_Part1c_P", false),
+		//Tuple.Create("Bridge S4", "L_Bridge_Part2_P", false),
 		Tuple.Create("Bridge End Mission Screen", "mission_stats", true),
-		Tuple.Create("Boyle I1", "L_Pub_Night_P", false),
-		Tuple.Create("Boyle I2", "L_Pub_Day_P", false),
-		Tuple.Create("Boyle S1", "L_Boyle_Ext_P", false),
-		Tuple.Create("Boyle S2", "L_Boyle_Int_P", false),
-		Tuple.Create("Boyle S3", "L_Boyle_Ext_P", false),
+		//Tuple.Create("Boyle I1", "L_Pub_Night_P", false),
+		//Tuple.Create("Boyle I2", "L_Pub_Day_P", false),
+		//Tuple.Create("Boyle S1", "L_Boyle_Ext_P", false),
+		//Tuple.Create("Boyle S2", "L_Boyle_Int_P", false),
+		//Tuple.Create("Boyle S3", "L_Boyle_Ext_P", false),
 		Tuple.Create("Boyle End Mission Screen", "mission_stats", true),
-		Tuple.Create("Tower I1", "L_Pub_Morning_P", false),
-		Tuple.Create("Tower S1", "L_TowerRtrn_Yard_P", false),
-		Tuple.Create("Tower S2", "L_TowerRtrn_Int_P", false),
-		Tuple.Create("Tower S3", "L_TowerRtrn_Yard_P", false),
+		//Tuple.Create("Tower I1", "L_Pub_Morning_P", false),
+		//Tuple.Create("Tower S1", "L_TowerRtrn_Yard_P", false),
+		//Tuple.Create("Tower S2", "L_TowerRtrn_Int_P", false),
+		//Tuple.Create("Tower S3", "L_TowerRtrn_Yard_P", false),
 		Tuple.Create("Tower End Mission Screen", "mission_stats", true),
-		Tuple.Create("Flooded I1", "L_Pub_Dusk_P", false),
-		Tuple.Create("Flooded I2", "L_Flooded_FIntro_P", false),
-		Tuple.Create("Flooded S1", "L_Flooded_FStreets_P", false),
-		Tuple.Create("Flooded S2", "L_Flooded_FAssassins_P", false),
-		Tuple.Create("Flooded S3", "L_Flooded_FGate_P", false),
-		Tuple.Create("Flooded S4", "L_Streetsewer_P", false),
+		//Tuple.Create("Flooded I1", "L_Pub_Dusk_P", false),
+		//Tuple.Create("Flooded I2", "L_Flooded_FIntro_P", false),
+		//Tuple.Create("Flooded S1", "L_Flooded_FStreets_P", false),
+		//Tuple.Create("Flooded S2", "L_Flooded_FAssassins_P", false),
+		//Tuple.Create("Flooded S3", "L_Flooded_FGate_P", false),
+		//Tuple.Create("Flooded S4", "L_Streetsewer_P", false),
 		Tuple.Create("Flooded End Mission Screen", "mission_stats", true),
-		Tuple.Create("Loyalists", "L_Pub_Assault_P", false),
+		//Tuple.Create("Loyalists", "L_Pub_Assault_P", false),
 		Tuple.Create("Loyalists End Mission Screen", "mission_stats", true),
-		Tuple.Create("Kingsparrow S1", "L_Isl_LowChaos_P", false),
-		Tuple.Create("Kingsparrow S2", "L_LightH_LowChaos_P", false),
+		//Tuple.Create("Kingsparrow S1", "L_Isl_LowChaos_P", false),
+		//Tuple.Create("Kingsparrow S2", "L_LightH_LowChaos_P", false),
 	};
 
 	int i = 0;
@@ -81,7 +82,8 @@ startup {
 	vars.autoSplitIndex = -1;
 }
 
-init {
+init
+{
 	switch (modules.First().ModuleMemorySize) {
     case  18219008:
     	version = "1.2";
@@ -96,15 +98,18 @@ init {
   }
 }
 
-exit {
+exit
+{
 	timer.IsGameTimePaused = true;
 }
 
-isLoading {
+isLoading
+{
 	return (current.isLoading && current.movie != "Dishonored") || vars.autoSplitIndex > vars.autoSplits.Length;
 }
 
-update {
+update
+{
 	const double posX = 9826.25f, delta = 0.25f;
 	if (old.isLoading || current.isLoading) {
 		// if we are loading, check for run reset
@@ -126,15 +131,18 @@ update {
 	}
 }
 
-reset {
+reset
+{
 	return current.isLoading && vars.runStarting;
 }
 
-start {
+start
+{
 	return !current.isLoading && vars.runStarting;
 }
 
-split {
+split
+{
 	if (vars.autoSplitIndex < vars.autoSplits.Length) {
 		// if we are in a loading screen, split if applicable based on level
 		int levelNum = current.levelNumber * 4;
